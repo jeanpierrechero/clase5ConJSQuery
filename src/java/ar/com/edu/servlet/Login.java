@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 public class Login extends HttpServlet{
     
     @Override
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
         String usuario = request.getParameter("usu");
         String pass = request.getParameter("pass");
         PrintWriter out = response.getWriter();

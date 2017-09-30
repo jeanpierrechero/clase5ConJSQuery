@@ -10,27 +10,29 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <script src="JS/jquery-3.2.1.js"></script>
         <script>
             $(document).ready(function(){
                 $("#login").click(function(){
                     usu = $("#usuario").val();
                     pass = $("#pass").val();
-                    $ajax.({url:"login?usu="+usu+"&pass="+pass,
-                        method:"get",
-                        sucess: function(data){
-                            $("#response").html(data);
+                    $.ajax({url:"login?usu="+usu+"&pass="+pass,
+                        method:"GET",
+                        success: function(data){
+                            $("#resp").html(data);
                         }
                     });
-                }
-            }
+                });
+            });
         </script>
         
     </head>
     <body>
       
+       
         usuario: <input type="text" id="usuario"/><br>
         contraseña: <input type="text" id="pass"/><br>
         <input type="button" id="login" value="guardar"/>
-        <div id="response"></div>
-    </body>
+        <div id="resp"></div>
+         </body>
 </html>
