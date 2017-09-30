@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Mi Primer JQuery</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script src="JS/jquery-3.2.1.js"></script>
+        <script>
+            $(document).ready(function (){
+                $("#boton").click(function () { //esto es jquery. busca todos los id boton y modifica el metodo click que busca todos los span y
+                    $("span").html($("#nombre").val());
+                });
+                
+                $("#toggle").click(function () {
+                    $("span").fadeOut("slow");
+                });
+                
+                $("#toggle2").click(function () {
+                    $("span").fadeIn("slow");
+                });
+                
+            });
+            
+        </script>
+        
+    </head>
+    
+    <body>
+        
+        <div>
+            
+            nombre: <input type="text" id="nombre"/> <br>
+            <input type="button" value="Saludar" id="boton"/> <br>
+            <input type="button" value="Toggle" id="toggle"/> <br>
+            <input type="button" value="Toggle" id="toggle2"/> <br>
+            Hola: <span id="data"> </span>
+            <span id="data2"> </span>
+                      
+        </div>
+        
+    </body>
+</html>
